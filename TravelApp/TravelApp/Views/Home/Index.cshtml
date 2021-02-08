@@ -1,0 +1,196 @@
+﻿@model HomeModel
+	<!-- slider-area-start -->
+<div class="slider-area">
+    <div class="slider-wrapper ptb-250" style="background-image:url(assets/img/slider/1.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-lg-6 pr-0">
+                    <div class="slider-text">
+                        <h2 class="cd-headline loading-bar">
+                            ASSOTOMOTIV
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">etibarlı.</b>
+                                <b>təcrübəli.</b>
+                                <b>peşəkar.</b>
+                            </span>
+                        </h2>
+                        <div class="slider-info">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, seddoi dmj iusmod tempor
+                                incididunt ut labore.
+                            </p>
+                        </div>
+                        <a href="#">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider-area-end -->
+<!-- our-service-area-start -->
+<div class="our-service-area pt-120 pb-90">
+    <div class="container">
+        <div class="section-title mb-60 text-center" style="background-image:url(assets/img/logo/section.png)">
+            <h4>We Provide</h4>
+            <h2>Our Services</h2>
+        </div>
+        <div class="row">
+            @foreach (ServiceLanguage service in Model.serviceLanguages)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-wrapper mb-30">
+                        <div class="service-img">
+                            <img src="@(service.Service.Photos.FirstOrDefault()!=null?"/Uploads/Services/"+service.Service.Photos.FirstOrDefault().Path:"/Uploads/error.jpg")" alt="" />
+                        </div>
+                        <div class="service-text text-center">
+                            <div class="service-icon-img">
+                                <i class="flaticon-house-icon"></i>
+                            </div>
+                            <h2><a href="service-details.html">@service.Name</a></h2>
+                            <p>@service.ShortDesc</p>
+                            <a href="@Url.Action("SpecificService","Service",new { serviceId = service.ServiceId })">read more</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- our-service-area-end -->
+<!-- contact-area-start -->
+<div class="contact-area pt-120 pb-90 bg-opacity" id="scroll" style="background-image:url(assets/img/bg/2.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="contact-wrapper mb-30">
+                        <form id="contact-form" action="@Url.Action("SendMessage","Contact")" method="post">
+                            @Html.ValidationSummary()
+                            <div class="col-sm-6">
+                                <input placeholder="name*" name="Name" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <input placeholder="email*" name="Email" type="email">
+                            </div>
+                            <div class="col-sm-12">
+                                <input placeholder="phone*" name="Phone" type="text">
+                            </div>
+                            <div class="col-sm-12">
+                                <textarea id="message" placeholder="message" rows="10" cols="30"
+                                          name="Message"></textarea>
+                            </div>
+                            <button type="submit">send message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="contact-left-wrapper">
+                    <div class="contact-text">
+                        <h2>Book an Free <br> Appointment</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, cons adipis elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="contact-icon-wrapper mb-30">
+                                <div class="contact-icon">
+                                    <i class="zmdi zmdi-pin"></i>
+                                </div>
+                                <div class="contact-icon-text">
+                                    <h3>Location</h3>
+                                    <p>2020 Willshire Glen,</p>
+                                    <p>Alpharetta, GA-30009</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="contact-icon-wrapper mb-30">
+                                <div class="contact-icon">
+                                    <i class="zmdi zmdi-time-interval"></i>
+                                </div>
+                                <div class="contact-icon-text">
+                                    <h3>Showroom Hours</h3>
+                                    <p>Monday - Friday: 8 a.m. – 4 p.m</p>
+                                    <p>Saturday: 10 a.m. – 4 p.m</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact-area-end -->
+<!-- testimonial-1-area-start -->
+<div class="testimonial-1-area pt-120 pb-200 gray-bg">
+    <div class="container">
+        <div class="section-title text-center" style="background-image:url(assets/img/logo/section.png)">
+            <h4>Testimonial</h4>
+            <h2>What Clients Say</h2>
+        </div>
+    </div>
+</div>
+<!-- testimonial-1-area-end -->
+<!-- testimonial-area-start -->
+<div class="testimonial-area">
+    <div class="container">
+        <div class="row">
+            <div class="testimonial-active owl-carousel">
+                @foreach (TestimonialLanguage testimonialLanguage in Model.testimonialLanguages)
+                {
+                    <div class="col-md-12">
+                        <div class="testimonial-wrapper mb-30">
+                            <div class="testimonial-img text-center">
+                            </div>
+                            <div class="testimonial-text text-center">
+                                <p>
+                                   @testimonialLanguage?.Text
+                                </p>
+                                <span>@testimonialLanguage?.Testimonial?.Name</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- testimonial-area-end -->
+
+
+@if (TempData["IsSend"]?.ToString() == "true")
+{
+
+    <div class="modal" tabindex="-1" id="myModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your message sended successfully.Thanks!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Modal{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $('#myModal').modal("show");
+    </script>
+}

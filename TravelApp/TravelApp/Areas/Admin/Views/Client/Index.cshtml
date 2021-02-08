@@ -1,0 +1,25 @@
+﻿@model List<Client>
+<div id="main-wrapper">
+    <h2>Clients</h2>
+    <a class="btn my-2 btn-danger" href="@Url.Action("Add","Client")">Add</a>
+    <table class="table table-light table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Resim</th>
+                <th>Ayarlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Client client in Model)
+            {
+                <tr>
+                    <td><img style="width:100px;height:100px;" src="~/Uploads/Clients/@client.Logo" alt="Alternate Text" /></td>
+                    <td>
+                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Client",new {clientId = client.Id })">Düzenle</a>
+                        <a class="delete-button btn btn-danger" data-url="/Admin/Client/Delete/" data-id="@client.Id" data-refresh="/Admin/Client/Index" href="@Url.Action("Delete","Client",new {clientId = client.Id })">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

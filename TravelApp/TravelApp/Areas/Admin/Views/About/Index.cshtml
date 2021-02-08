@@ -1,0 +1,29 @@
+﻿@model List<AboutLanguage>
+<div id="main-wrapper">
+    <h2>About</h2>
+    <a class="btn my-2 btn-danger" href="@Url.Action("Add","About")">Add</a>
+    <table class="table table-light table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Metin</th>
+                <th>Ayarlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (AboutLanguage aboutLanguage in Model)
+            {
+                <tr>
+                    <td>
+                        <p>
+                            @aboutLanguage.Text
+                        </p>
+                    </td>
+                    <td>
+                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","About",new {aboutId = aboutLanguage.AboutId })">Düzenle</a>
+                        <a class="delete-button btn btn-danger" data-url="/Admin/About/Delete/" data-id="@aboutLanguage.AboutId" data-photo="false" data-refresh="/Admin/About/Index" href="@Url.Action("Delete","About",new {aboutId = aboutLanguage.AboutId })">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

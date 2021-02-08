@@ -1,0 +1,55 @@
+﻿@model FooterModel
+<footer>
+    <!-- footer-top-area-start -->
+    <div class="footer-top-area footer-top black-bg pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 pr-0">
+                    <div class="footer-wrapper mb-30">
+                        <h2 class="footer-section">about us</h2>
+                        <div class="footer-text">
+                            <p>
+                                @Model.SettingLanguage?.AboutUs
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-2 col-sm-4">
+                    <div class="footer-wrapper mb-30">
+                        <h2 class="footer-section">SERVICES</h2>
+                        <ul class="footer-menu">
+                            @foreach (ServiceLanguage serviceLanguage in Model.ServiceLanguages)
+                            {
+                                <li><a href="@Url.Action("Index","Home",new { serviceId = serviceLanguage.ServiceId})">@serviceLanguage.Name</a></li>
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-2 hidden-sm">
+                    <div class="footer-wrapper mb-30">
+                        <h2 class="footer-section">link</h2>
+                        <ul class="footer-menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="footer-wrapper mb-30">
+                        <h2 class="footer-section">address</h2>
+                        <ul class="footer-link">
+                            <li><i class="fa fa-phone"></i><span>@Model.SettingLanguage?.Adress</span></li>
+                            <li><i class="fa fa-envelope-open"></i><span>@Model.SettingLanguage?.Setting?.Phone</span></li>
+                            <li><i class="fa fa-envelope-open"></i><span>@Model.SettingLanguage?.Setting?.Email</span></li>
+                            <li><i class="fa fa-clock-o"></i><span>@Model.SettingLanguage?.Setting?.Clock</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-top-area-end -->
+</footer>

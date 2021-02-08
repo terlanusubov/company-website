@@ -1,0 +1,25 @@
+﻿@model List<Work>
+<div id="main-wrapper">
+    <h2>Works</h2>
+    <a class="btn my-2 btn-danger" href="@Url.Action("Add","Work")">Add</a>
+    <table class="table table-light table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Resim</th>
+                <th>Ayarlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Work work in Model)
+            {
+                <tr>
+                    <td><img style="width:100px;height:100px;" src="~/Uploads/Works/@work.Photo" alt="Alternate Text" /></td>
+                    <td>
+                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Work",new {workId = work.Id })">Düzenle</a>
+                        <a class="delete-button btn btn-danger" data-url="/Admin/Work/Delete/" data-id="@work.Id" data-refresh="/Admin/Work/Index" href="@Url.Action("Delete","Work",new {workId = work.Id })">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

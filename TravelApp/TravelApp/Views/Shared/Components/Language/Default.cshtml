@@ -1,0 +1,21 @@
+﻿@model LanguageModel
+<form id="selectLanguage" action="@Url.Action("SetLanguage","Language",new { returnUrl=Context.Request.Path,area=""})"
+      method="post" class="form-horizontal language-wrapper" role="form">
+    <select name="culture" onchange="this.form.submit()">
+        @foreach (var language in Model.Languages)
+        {
+            if (Model.CurrentLanguage.Id == language.Id)
+            {
+                <option selected value="@language.Key">
+                    @language.Name
+                </option>
+            }
+            else
+            {
+                <option  value="@language.Key">
+                    @language.Name
+                </option>
+            }
+        }
+    </select>
+</form>

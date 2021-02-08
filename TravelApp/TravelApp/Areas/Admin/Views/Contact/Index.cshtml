@@ -1,0 +1,29 @@
+﻿@model List<Contact>
+<div id="main-wrapper">
+    <h2>Contacts</h2>
+    <table class="table table-light table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Isim</th>
+                <th>Email</th>
+                <th>Mesaj</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Contact contact in Model)
+            {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.Email</td>
+                <td>
+                    @contact.Message
+                </td>
+                <td>
+                    @contact.CreatedDate
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

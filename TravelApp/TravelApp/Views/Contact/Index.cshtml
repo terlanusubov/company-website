@@ -1,0 +1,119 @@
+﻿@model Setting
+<!-- breadcrumb-banner-area -->
+<div class="breadcrumb-banner-area ptb-120 bg-opacity" style="background-image:url(assets/img/bg/6.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text text-center">
+                    <h2>contact-us</h2>
+                    <p>Lorem Ipsum is simply dummy text of. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-banner-area-end -->
+<!-- contact-3-area-start -->
+<div class="contact-3-area contact-2 contact-3 pt-120 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contact-wrapper-3 mb-30">
+                    <div class="contact-3-text">
+                        <h3>Leave Us a Message</h3>
+                    </div>
+                    <form action="@Url.Action("SendMessage","Contact")" method="post" id="contact-form">
+                        @Html.ValidationSummary()
+                        <div class="col-sm-6">
+                            <input name="Name" type="text" placeholder="name*">
+                        </div>
+                        <div class="col-sm-6">
+                            <input name="Email" type="email" placeholder="email*">
+                        </div>
+                        <div class="col-sm-12">
+                            <textarea name="Message" cols="30" rows="10" placeholder="message"
+                                      id="message"></textarea>
+                        </div>
+                        <button type="submit">send message</button>
+                    </form>
+                    <p class="form-message"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-3-right-wrapper mb-30">
+                    <div class="contact-3-right-info">
+                        <h3>Contact Us</h3>
+                        <p>Lorem ipsum dolor sit amet, conse ncteturll adipisicing elit, sed do eiusmod </p>
+                    </div>
+                    <div class="contact-3-address">
+                        <div class="contact-3-icon">
+                            <i class="zmdi zmdi-pin"></i>
+                        </div>
+                        <div class="address-text">
+                            <span class="location">Location :</span>
+                            <span class="USA">@Model?.Location</span>
+                        </div>
+                    </div>
+                    <div class="contact-3-address">
+                        <div class="contact-3-icon">
+                            <i class="zmdi zmdi-phone"></i>
+                        </div>
+                        <div class="address-text">
+                            <span class="location">phone :</span>
+                            <span class="USA">@Model?.Phone</span>
+                        </div>
+                    </div>
+                    <div class="contact-3-address">
+                        <div class="contact-3-icon">
+                            <i class="zmdi zmdi-email"></i>
+                        </div>
+                        <div class="address-text">
+                            <span class="location">mail :</span>
+                            <span class="USA">@Model?.Email</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact-3-area-end -->
+<!-- map-area -->
+<div class="map-area pb-120">
+    <div class="container">
+        <div id="map"></div>
+    </div>
+</div>
+<!-- map-end -->
+
+@if (TempData["IsSend"]?.ToString() == "true")
+{
+
+    <div class="modal" tabindex="-1" id="myModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your message sended successfully.Thanks!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Modal{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $('#myModal').modal("show");
+    </script>
+}

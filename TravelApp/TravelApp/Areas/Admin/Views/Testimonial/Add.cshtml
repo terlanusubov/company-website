@@ -1,0 +1,60 @@
+﻿@model List<Language>
+<div id="form-wrapper">
+    <p>Please select language and fill blanks</p>
+    <select id="choose-language" class="my-3 form-control">
+        @{
+            var counter = 0;
+        }
+        @foreach (Language language in Model)
+        {
+            if (counter == 0)
+            {
+                <option selected value=".@language.Name">@language.Name</option>
+            }
+            else
+            {
+                <option value=".@language.Name">@language.Name</option>
+            }
+            counter++;
+        }
+    </select>
+    <form action="@Url.Action("Add","Testimonial")" method="post" enctype="multipart/form-data">
+        <select hidden multiple name="Photos" id="photos">
+        </select>
+        <label>
+            Name
+        </label>
+        <input type="text" name="Name" class="my-3 form-control" value="" />
+        @{
+            counter = 0;
+        }
+        @foreach (Language language in Model)
+        {
+            if (counter == 0)
+            {
+                <div class="@language.Name active form-element">
+                    <h4 class="my-2">@language.Name</h4>
+                    <div class="form-group">
+                        <label>Text</label>
+                        <textarea rows="10" cols="10" name="Texts" class="form-control"></textarea>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="@language.Name form-element">
+                    <h4 class="my-2">@language.Name</h4>
+                    <div class="form-group">
+                        <label>Text</label>
+                        <textarea rows="10" cols="10" name="Texts" class="form-control"></textarea>
+                    </div>
+                </div>
+            }
+            counter++;
+        }
+        <div class="form-group">
+            <button type="submit" class="btn btn-block btn-danger">ADD</button>
+        </div>
+    </form>
+</div>
+

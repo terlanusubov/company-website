@@ -1,0 +1,31 @@
+﻿@model List<MemberLanguage>
+<div id="main-wrapper">
+    <h2>Members</h2>
+    <a href="@Url.Action("Add","Member")" class="my-3 btn btn-danger">Add Member</a>
+    <table class="table table-light table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Isim</th>
+                <th>Pozisyon</th>
+                <th>Resim</th>
+                <th>Parametrler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (MemberLanguage memberLanguage in Model)
+            {
+                <tr>
+                    <td>@memberLanguage.Member?.Name</td>
+                    <td>@memberLanguage.Position</td>
+                    <td>
+                        <img src="~/Uploads/Members/@memberLanguage.Member.Photo" style="width:150px;height:150px;" alt="Member" />
+                    </td>
+                    <td>
+                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Member",new {memberId = memberLanguage.MemberId })">Düzenle</a>
+                        <a class="delete-button btn btn-danger" data-url="/Admin/Member/Delete/" data-id="@memberLanguage.MemberId" data-refresh="/Admin/Member/Index" href="@Url.Action("Delete","Member",new {memberId = memberLanguage.MemberId })">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

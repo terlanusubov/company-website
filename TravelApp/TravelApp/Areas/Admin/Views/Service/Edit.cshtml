@@ -1,0 +1,93 @@
+﻿@model ServiceEditViewModel
+<div id="form-wrapper">
+    <p>Məlumat düzəliş edərkən dil seçin.Seçdiyiniz dilə uyğun olaraq məlumat bazaya əlavə olunacaqdır.</p>
+    <select id="choose-language" class="my-3 form-control">
+        @{
+            var counter = 0;
+        }
+        @foreach (Language language in Model.Languages)
+        {
+            if (counter == 0)
+            {
+                <option selected value=".@language.Name">@language.Name</option>
+            }
+            else
+            {
+                <option value=".@language.Name">@language.Name</option>
+            }
+            counter++;
+        }
+    </select>
+    <form action="@Url.Action("Edit","Service")" method="post" enctype="multipart/form-data">
+        <select hidden multiple name="DeletePhotos" id="delete-photos">
+        </select>
+        <select hidden multiple name="Photos" id="photos">
+        </select>
+        <input type="text" hidden name="serviceId" value="@Model.ServiceLanguages.FirstOrDefault()?.ServiceId" />
+
+        @{
+            counter = 0;
+        }
+        @foreach (Language language in Model.Languages)
+        {
+            if (counter == 0)
+            {
+                <div class="@language.Name active form-element">
+                    <h4 class="my-2">@language.Name</h4>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" type="text" name="Names" value="@Model.ServiceLanguages.Where(sl=>sl.LanguageId == language.Id).FirstOrDefault()?.Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>ShortDesc</label>
+                        <input class="form-control" type="text" name="ShortDescs" value="@Model.ServiceLanguages.Where(sl=>sl.LanguageId == language.Id).FirstOrDefault()?.ShortDesc" />
+                    </div>
+                    <div class="form-group">
+                        <label>Text</label>
+                        <input class="form-control" type="text" name="Texts" value="@Model.ServiceLanguages.Where(sl=>sl.LanguageId == language.Id).FirstOrDefault()?.Text" />
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="@language.Name form-element">
+                    <h4 class="my-2">@language.Name</h4>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" type="text" name="Names" value="@Model.ServiceLanguages.Where(sl=>sl.LanguageId == language.Id).FirstOrDefault()?.Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>ShortDesc</label>
+                        <input class="form-control" type="text" name="ShortDescs" value="@Model.ServiceLanguages.Where(sl=>sl.LanguageId == language.Id).FirstOrDefault()?.ShortDesc" />
+                    </div>
+                    <div class="form-group">
+                        <label>Text</label>
+                        <input class="form-control" type="text" name="Texts" value="@Model.ServiceLanguages.Where(sl=>sl.LanguageId == language.Id).FirstOrDefault()?.ShortDesc" />
+                    </div>
+                </div>
+            }
+            counter++;
+        }
+
+        <div class="my-5 image-upload">
+            <label>Upload Photo</label>
+            <input class="photo-upload-input" type="file" multiple value="" />
+        </div>
+        <div class="image-view">
+            <ul class="d-flex">
+                @foreach (ServicePhoto photo in Model.ServiceLanguages.FirstOrDefault()?.Service.Photos)
+                {
+                    <li>
+                        <span class="btn btn-danger delete-photo-button">Sil</span>
+                        <img data-name="@photo.Path" src="~/Uploads/Services/@photo.Path" alt="Alternate Text" />
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <button type="button" data-path="Services" class="submit-button btn btn-block btn-danger">Düzəliş et</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,75 @@
+﻿@model MemberEditModel
+<div id="form-wrapper">
+    <p>Please select language and fill blanks</p>
+    <select id="choose-language" class="my-3 form-control">
+        @{
+            var counter = 0;
+        }
+        @foreach (Language language in Model.Languages)
+        {
+            if (counter == 0)
+            {
+                <option selected value=".@language.Name">@language.Name</option>
+            }
+            else
+            {
+                <option value=".@language.Name">@language.Name</option>
+            }
+            counter++;
+        }
+    </select>
+    <form action="@Url.Action("Edit","Member")" method="post" enctype="multipart/form-data">
+        <select hidden multiple name="Photos" id="photos">
+        </select>
+        <select hidden multiple name="DeletePhotos" id="delete-photos">
+        </select>
+        <input type="text" hidden name="MemberId" value="@Model.MemberLanguages.FirstOrDefault()?.MemberId" />
+        @{
+            counter = 0;
+        }
+        <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" type="text" name="Name" value="@Model.MemberLanguages.FirstOrDefault()?.Member?.Name" />
+        </div>
+        @foreach (Language language in Model.Languages)
+        {
+            if (counter == 0)
+            {
+                <div class="@language.Name active form-element">
+                    <h4 class="my-2">@language.Name</h4>
+                    <div class="form-group">
+                        <label>Position</label>
+                        <input class="form-control" type="text" name="Positions" value="@Model.MemberLanguages.Where(m=>m.LanguageId == language.Id).FirstOrDefault()?.Position" />
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="@language.Name form-element">
+                    <h4 class="my-2">@language.Name</h4>
+                    <div class="form-group">
+                        <label>Position</label>
+                        <input class="form-control" type="text" name="Positions" value="@Model.MemberLanguages.Where(m=>m.LanguageId == language.Id).FirstOrDefault()?.Position" />
+                    </div>
+                </div>
+            }
+            counter++;
+        }
+        <div class="my-5 image-upload">
+            <label>Upload Photo</label>
+            <input data-single="true" class="photo-upload-input" type="file" value="" />
+        </div>
+        <div class="image-view">
+            <ul class="d-flex">
+                <li>
+                    <span class="btn btn-danger delete-photo-button">Sil</span>
+                    <img data-delete="true" data-name="@Model.MemberLanguages.FirstOrDefault().Member?.Photo" src="~/Uploads/Members/@Model.MemberLanguages.FirstOrDefault().Member?.Photo" alt="Alternate Text" />
+                </li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <button type="button" data-path="Members" class="submit-button btn btn-block btn-danger">Edit</button>
+        </div>
+    </form>
+</div>
+
