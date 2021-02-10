@@ -13,9 +13,9 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="wwwroot\Uploads\Members\" />
-    <Folder Include="wwwroot\Uploads\Icons\" />
     <Folder Include="wwwroot\Uploads\Clients\" />
     <Folder Include="wwwroot\Uploads\About\" />
+    <Folder Include="wwwroot\Uploads\Icons\" />
     <Folder Include="wwwroot\Uploads\Works\" />
     <Folder Include="wwwroot\Uploads\Services\" />
   </ItemGroup>

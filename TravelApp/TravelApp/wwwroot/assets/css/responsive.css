@@ -393,5 +393,25 @@
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container{width:450px}
- 
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.mean-nav li form {
+		padding: 1em 5%;
+		margin: 0;
+		text-align: left;
+		color: #fff;
+		border-top: 1px solid rgba(255,255,255,0.5);
+		text-decoration: none;
+		color: white !important;
+	}
+
+		.mean-nav li form #languageSelect {
+			color: white !important;
+		}
+
+		.mean-nav li form select option {
+			color: black !important;
+		}
 }

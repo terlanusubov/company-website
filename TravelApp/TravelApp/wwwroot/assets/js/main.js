@@ -215,7 +215,7 @@ $('.video-popup').magnificPopup({
 
 $('.make-appointment').click(function () {
     $('html, body').animate({
-        scrollTop: $("#scroll").offset().top
+        scrollTop: $("#scroll").offset().top - 150
     },1000);
 })
 

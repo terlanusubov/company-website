@@ -126,6 +126,9 @@
   <data name="Home" xml:space="preserve">
     <value>Ana səhifə</value>
   </data>
+  <data name="Make Appointment" xml:space="preserve">
+    <value>Görüş təyin et</value>
+  </data>
   <data name="Services" xml:space="preserve">
     <value>Xidmətlərimiz</value>
   </data>
