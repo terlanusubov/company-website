@@ -9,6 +9,5 @@ namespace TravelApp.Models
     {
         public int Id { get; set; }
         public string Photo { get; set; }
-
     }
 }

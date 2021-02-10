@@ -1,13 +1,13 @@
 ﻿@model List<TestimonialLanguage>
 <div id="main-wrapper">
-    <h2>Testimonial</h2>
-    <a class="btn my-2 btn-danger" href="@Url.Action("Add","Testimonial")">Add</a>
+    <h2>İfadələr</h2>
+    <a class="btn my-2 btn-danger" href="@Url.Action("Add","Testimonial")">Əlavə et</a>
     <table class="table table-light table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>Isim</th>
-                <th>Metin</th>
-                <th>Ayarlar</th>
+                <th>Ad</th>
+                <th>Təsvir</th>
+                <th>Parametrlər</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
                         </p>
                     </td>
                     <td>
-                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Testimonial",new {testimonialId = testimonialLanguage.TestimonialId })">Düzenle</a>
+                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Testimonial",new {testimonialId = testimonialLanguage.TestimonialId })">Düzəliş et</a>
                         <a class="delete-button btn btn-danger" data-url="/Admin/Testimonial/Delete/" data-id="@testimonialLanguage.TestimonialId" data-photo="false" data-refresh="/Admin/Testimonial/Index" href="@Url.Action("Delete","Testimonial",new {testimonialId = testimonialLanguage.TestimonialId })">Sil</a>
                     </td>
                 </tr>

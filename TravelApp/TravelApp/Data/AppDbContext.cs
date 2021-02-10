@@ -29,6 +29,7 @@ namespace TravelApp.Data
         public DbSet<TestimonialLanguage> TestimonialLanguages { get; set; }
         public DbSet<Work> Works { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<Banner> Banners { get; set; }
 
         public async Task SeedAsync(IServiceScope scope)
         {

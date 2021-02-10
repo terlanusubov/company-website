@@ -1,13 +1,13 @@
 ﻿@model List<ServiceLanguage>
 <div id="main-wrapper">
-    <h2>Services</h2>
-    <a class="btn my-2 btn-danger" href="@Url.Action("Add","Service")">Add</a>
+    <h2>Xidmətlər</h2>
+    <a class="btn my-2 btn-danger" href="@Url.Action("Add","Service")">Əlavə et</a>
     <table class="table table-light table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>Isim</th>
-                <th>Foto</th>
-                <th>Ayarlar</th>
+                <th>Ad</th>
+                <th>Şəkil</th>
+                <th>Parametrlər</th>
             </tr>
         </thead>
         <tbody>
@@ -17,7 +17,7 @@
                     <td>@serviceLanguage.Name</td>
                     <td><img style="width:100px;height:100px;" src="~/Uploads/Services/@serviceLanguage.Service.Photos.FirstOrDefault()?.Path" alt="Alternate Text" /></td>
                     <td>
-                        <a class="mr-2 btn btn-warning"  href="@Url.Action("Edit","Service",new {serviceId = serviceLanguage.ServiceId })">Düzenle</a>
+                        <a class="mr-2 btn btn-warning"  href="@Url.Action("Edit","Service",new {serviceId = serviceLanguage.ServiceId })">Düzəliş et</a>
                         <a class="delete-button btn btn-danger" data-url="/Admin/Service/Delete/" data-id="@serviceLanguage.ServiceId" data-refresh="/Admin/Service/Index" href="@Url.Action("Delete","Service",new {serviceId = serviceLanguage.ServiceId })">Sil</a>
                     </td>
                 </tr>

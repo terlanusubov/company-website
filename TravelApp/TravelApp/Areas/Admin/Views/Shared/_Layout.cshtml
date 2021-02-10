@@ -58,42 +58,42 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a href="@Url.Action("Index","Contact")">
-                                Contacts
+                                Əlaqələr
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Service")">
-                                Services
+                                Xidmətlər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Member")">
-                                Members
+                                Üzvlər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Work")">
-                                Works
+                                İşcilər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Client")">
-                                Clients
+                                Müştərilər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","About")">
-                                About
+                                Haqqımızda
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Testimonial")">
-                                Testimonials
+                                İfadələr
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Settings")">
-                                Settings
+                                Parametrlər
                             </a>
                         </li>
                     </ul>
@@ -113,42 +113,42 @@
                     <ul class="list-unstyled navbar__list">
                         <li>
                             <a href="@Url.Action("Index","Contact")">
-                                Contacts
+                                Əlaqələr
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Service")">
-                                Services
+                                Xidmətlər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Member")">
-                                Members
+                                Üzvlər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Work")">
-                                Works
+                                İşçilər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Client")">
-                                Clients
+                                Müştərilər
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","About")">
-                                About
+                                Haqqımızda
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Testimonial")">
-                                Testimonials
+                                İfadələr
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Settings")">
-                                Settings
+                                Parametrlər
                             </a>
                         </li>
                     </ul>
@@ -164,54 +164,13 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <div class="header-button">
-                                <div class="noti-wrap">
-                                    <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-email"></i>
-                                        <span class="quantity">1</span>
-                                        <div class="email-dropdown js-dropdown">
-                                            <div class="email__title">
-                                                <p>You have 3 New Emails</p>
-                                            </div>
-                                            <div class="email__item">
-                                                <div class="image img-cir img-40">
-                                                    <img src="~/Admin/images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
-                                                </div>
-                                                <div class="content">
-                                                    <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, 3 min ago</span>
-                                                </div>
-                                            </div>
-                                            <div class="email__item">
-                                                <div class="image img-cir img-40">
-                                                    <img src="~/Admin/images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
-                                                </div>
-                                                <div class="content">
-                                                    <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, Yesterday</span>
-                                                </div>
-                                            </div>
-                                            <div class="email__item">
-                                                <div class="image img-cir img-40">
-                                                    <img src="~/Admin/images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
-                                                </div>
-                                                <div class="content">
-                                                    <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, April 12,,2018</span>
-                                                </div>
-                                            </div>
-                                            <div class="email__footer">
-                                                <a href="#">See all emails</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
                                             <img src="~/Admin/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">@Context.Session.GetString("admin_name") @Context.Session.GetString("admin_surname")</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -222,13 +181,13 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">@Context.Session.GetString("admin_name") @Context.Session.GetString("admin_surname")</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">@Context.Session.GetString("admin_email")</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="@Url.Action("Logout","Account")">
                                                     <i class="zmdi zmdi-power"></i>Logout
                                                 </a>
                                             </div>

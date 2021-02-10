@@ -14,5 +14,6 @@ namespace TravelApp.Models
         public string Instagram { get; set; }
         public string Location { get; set; }
         public string Clock { get; set; }
+        public string Logo { get; set; }
     }
 }

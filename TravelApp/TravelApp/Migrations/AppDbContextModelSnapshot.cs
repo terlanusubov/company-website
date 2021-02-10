@@ -15,7 +15,7 @@ namespace TravelApp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -218,6 +218,23 @@ namespace TravelApp.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("TravelApp.Models.Banner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Text");
+
+                    b.Property<string>("Title");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banners");
+                });
+
             modelBuilder.Entity("TravelApp.Models.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -375,6 +392,8 @@ namespace TravelApp.Migrations
                     b.Property<string>("Instagram");
 
                     b.Property<string>("Location");
+
+                    b.Property<string>("Logo");
 
                     b.Property<string>("Phone");
 

@@ -1,12 +1,12 @@
 ﻿@model List<AboutLanguage>
 <div id="main-wrapper">
-    <h2>About</h2>
-    <a class="btn my-2 btn-danger" href="@Url.Action("Add","About")">Add</a>
+    <h2>Haqqımızda</h2>
+    <a class="btn my-2 btn-danger" href="@Url.Action("Add","About")">Əlavə et</a>
     <table class="table table-light table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>Metin</th>
-                <th>Ayarlar</th>
+                <th>Təsvir</th>
+                <th>Parametrlər</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                         </p>
                     </td>
                     <td>
-                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","About",new {aboutId = aboutLanguage.AboutId })">Düzenle</a>
+                        <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","About",new {aboutId = aboutLanguage.AboutId })">Düzəliş et</a>
                         <a class="delete-button btn btn-danger" data-url="/Admin/About/Delete/" data-id="@aboutLanguage.AboutId" data-photo="false" data-refresh="/Admin/About/Index" href="@Url.Action("Delete","About",new {aboutId = aboutLanguage.AboutId })">Sil</a>
                     </td>
                 </tr>

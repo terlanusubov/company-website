@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Parametrlər</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-danger" asp-action="Create">Əlavə et</a>
 </p>
 <table class="table">
     <thead>
@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.Clock)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Düzəliş et</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detallar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
             </td>
         </tr>
 }

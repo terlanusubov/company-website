@@ -1,6 +1,6 @@
 ﻿@model List<Language>
 <div id="form-wrapper">
-    <p>Please select language and fill blanks</p>
+    <p>Dil seçərək aşağıdakı məlumatları doldurun.</p>
     <select id="choose-language" class="my-3 form-control">
         @{
             var counter = 0;
@@ -25,7 +25,7 @@
             counter = 0;
         }
         <div class="form-group">
-            <label>Name</label>
+            <label>Ad</label>
             <input class="form-control" type="text" name="Name" value="" />
         </div>
         @foreach (Language language in Model)
@@ -33,9 +33,8 @@
             if (counter == 0)
             {
                 <div class="@language.Name active form-element">
-                    <h4 class="my-2">@language.Name</h4>
                     <div class="form-group">
-                        <label>Position</label>
+                        <label>Vəzifə</label>
                         <input class="form-control" type="text" name="Positions" value="" />
                     </div>
                 </div>
@@ -43,9 +42,8 @@
             else
             {
                 <div class="@language.Name form-element">
-                    <h4 class="my-2">@language.Name</h4>
                     <div class="form-group">
-                        <label>Position</label>
+                        <label>Vəzifə</label>
                         <input class="form-control" type="text" name="Positions" value="" />
                     </div>
                 </div>
@@ -53,7 +51,7 @@
             counter++;
         }
         <div class="my-5 image-upload">
-            <label>Upload Photo</label>
+            <label>Şəkil yüklə</label>
             <input class="photo-upload-input" type="file"  value="" />
         </div>
         <div class="image-view">
@@ -61,7 +59,7 @@
             </ul>
         </div>
         <div class="form-group">
-            <button type="button" data-path="Members" class="submit-button btn btn-block btn-danger">ADD</button>
+            <button type="button" data-path="Members" class="submit-button btn btn-block btn-danger">Yadda saxla</button>
         </div>
     </form>
 </div>

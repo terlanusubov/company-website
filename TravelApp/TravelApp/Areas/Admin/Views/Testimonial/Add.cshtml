@@ -1,6 +1,6 @@
 ﻿@model List<Language>
 <div id="form-wrapper">
-    <p>Please select language and fill blanks</p>
+    <p>Dil seçərək aşağıdakı məlumatları doldurun.</p>
     <select id="choose-language" class="my-3 form-control">
         @{
             var counter = 0;
@@ -22,7 +22,7 @@
         <select hidden multiple name="Photos" id="photos">
         </select>
         <label>
-            Name
+            Ad
         </label>
         <input type="text" name="Name" class="my-3 form-control" value="" />
         @{
@@ -33,9 +33,8 @@
             if (counter == 0)
             {
                 <div class="@language.Name active form-element">
-                    <h4 class="my-2">@language.Name</h4>
                     <div class="form-group">
-                        <label>Text</label>
+                        <label>Təsvir</label>
                         <textarea rows="10" cols="10" name="Texts" class="form-control"></textarea>
                     </div>
                 </div>
@@ -43,9 +42,8 @@
             else
             {
                 <div class="@language.Name form-element">
-                    <h4 class="my-2">@language.Name</h4>
                     <div class="form-group">
-                        <label>Text</label>
+                        <label>Təsvir</label>
                         <textarea rows="10" cols="10" name="Texts" class="form-control"></textarea>
                     </div>
                 </div>
@@ -53,7 +51,7 @@
             counter++;
         }
         <div class="form-group">
-            <button type="submit" class="btn btn-block btn-danger">ADD</button>
+            <button type="submit" class="btn btn-block btn-danger">Yadda saxla</button>
         </div>
     </form>
 </div>
