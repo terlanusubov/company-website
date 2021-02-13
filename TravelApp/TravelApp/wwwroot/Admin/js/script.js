@@ -13,12 +13,12 @@
         });
 
         swalWithBootstrapButtons.fire({
-            title: 'Silmek istediyinize eminmisiniz?',
-            text: "Bu geri dönülemez bir işlemdir!",
+            title: 'Silmək istədiyinizə əminsiniz?',
+            text: "Bu geri dönə bilməyəcəyiniz əməliyyatdır!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Evet, eminim!',
-            cancelButtonText: 'Hayır, iptal et!',
+            confirmButtonText: 'Bəli, əminəm!',
+            cancelButtonText: 'Xeyr, ləğv et!',
             reverseButtons: true
         }).then((result) => {
             if (result.value) {
@@ -29,8 +29,8 @@
                     success: function (response) {
                         if (response.status === 200) {
                             swalWithBootstrapButtons.fire(
-                                'Başarılı!',
-                                'İşlem başarıyla tamamlandı',
+                                'Uğurlu!',
+                                'Əməliyyat uğurla tamamlandı!',
                                 'success'
                             ).then((r) => {
                                 if (r.value) {
@@ -42,8 +42,8 @@
                         }
                         else {
                             swalWithBootstrapButtons.fire(
-                                'Hata!',
-                                'Bir hata sonucu işlem tamamlanamadı!',
+                                'Xəta!',
+                                'Bir xəta səbəbilə əməliyyat tamamlanmadı!',
                                 'error'
                             );
                         }
@@ -55,8 +55,8 @@
                 result.dismiss === Swal.DismissReason.cancel
             ) {
                 swalWithBootstrapButtons.fire(
-                    'İptal!',
-                    'İşlem iptal edildi',
+                    'Xəta!',
+                    'Əməliyyat ləğv edildi!',
                     'error'
                 );
             }
@@ -75,14 +75,14 @@
         let files = $(this).get(0).files;
         let status = $(this).data("single");
         Swal.fire({
-            title: 'Eminmisiniz?',
-            text: "Bu resimler sitenize yüklenecek",
+            title: 'Əminsiniz?',
+            text: "Bu şəkillər sayta yüklənəcək.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Evet, Eminim!',
-            cancelButtonText: 'Hayır'
+            confirmButtonText: 'Bəli, əminəm!',
+            cancelButtonText: 'Xeyr'
         }).then((result) => {
             if (result.value) {
                 console.log(status)
@@ -98,8 +98,8 @@
                 ShowPhotos(files);
                 AddToSelect(files);
                 Swal.fire(
-                    'Başarılı!',
-                    'İşlem başarıyla tamamlandı.',
+                    'Uğurlu!',
+                    'Əməliyyat uğurla tamamlandı!',
                     'success'
                 );
             }
@@ -108,14 +108,14 @@
     //DELETE PHOTO
     $(".image-view ul").on("click", "li span", function (e) {
         Swal.fire({
-            title: 'Eminmisiniz?',
-            text: "Bu resim listeden silinecekdir!",
+            title: 'Əminsiniz?',
+            text: "Bu şəkil siyahıdan silinəcək!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Evet, Eminim!',
-            cancelButtonText: 'Hayır'
+            confirmButtonText: 'Bəli, əminəm!',
+            cancelButtonText: 'Xeyr'
         }).then((result) => {
             if (result.value) {
                 let name = $(this).parent().find("img").data("name");
@@ -124,8 +124,8 @@
                 console.log(photos);
                 $(this).parent().remove();
                 Swal.fire(
-                    'Başarılı!',
-                    'İşlem başarıyla tamamlandı.',
+                    'Uğurlu!',
+                    'Əməliyyat uğurla tamamlandı!',
                     'success'
                 );
             }
@@ -135,15 +135,15 @@
     $(".submit-button").click(function (e) {
         e.preventDefault();
         Swal.fire(
-            'Bekleyin!',
-            'İşlem sürdürülmektedir.',
+            'Gözləyin!',
+            'Əməliyyat davam edir!',
             'warning'
         );
         UploadPhotoToServer($(this), $(this).parent("form"));
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'İşlem başarıyla tamamlandı',
+            title: 'Əməliyyat uğurla tamamlandı!',
             showConfirmButton: false,
             timer: 1500
         });
@@ -187,7 +187,7 @@
             fileReader.onload = function () {
                 let element = ` <li>
                     <span class="btn btn-danger delete-photo-button">Sil</span>
-                    <img data-name="${photo.name}" src="${fileReader.result}" alt="Alternate Text" />
+                    <img class="imageView" data-name="${photo.name}" src="${fileReader.result}" alt="Alternate Text" />
                 </li>`;
 
                 $(".image-view ul").append(element);

@@ -18,7 +18,7 @@
                     <td>@memberLanguage.Member?.Name</td>
                     <td>@memberLanguage.Position</td>
                     <td>
-                        <img src="~/Uploads/Members/@memberLanguage.Member.Photo" style="width:150px;height:150px;" alt="Member" />
+                        <img class="imageView" src="~/Uploads/Members/@memberLanguage.Member.Photo" style="width:150px;height:150px;" alt="Member" />
                     </td>
                     <td>
                         <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Member",new {memberId = memberLanguage.MemberId })">Düzəliş et</a>

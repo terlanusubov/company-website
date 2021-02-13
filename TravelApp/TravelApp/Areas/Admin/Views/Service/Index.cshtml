@@ -15,7 +15,7 @@
             {
                 <tr>
                     <td>@serviceLanguage.Name</td>
-                    <td><img style="width:100px;height:100px;" src="~/Uploads/Services/@serviceLanguage.Service.Photos.FirstOrDefault()?.Path" alt="Alternate Text" /></td>
+                    <td><img class="imageView" style="width:100px;height:100px;" src="~/Uploads/Services/@serviceLanguage.Service.Photos.FirstOrDefault()?.Path" alt="Alternate Text" /></td>
                     <td>
                         <a class="mr-2 btn btn-warning"  href="@Url.Action("Edit","Service",new {serviceId = serviceLanguage.ServiceId })">Düzəliş et</a>
                         <a class="delete-button btn btn-danger" data-url="/Admin/Service/Delete/" data-id="@serviceLanguage.ServiceId" data-refresh="/Admin/Service/Index" href="@Url.Action("Delete","Service",new {serviceId = serviceLanguage.ServiceId })">Sil</a>

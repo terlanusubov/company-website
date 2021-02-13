@@ -13,7 +13,7 @@
             @foreach (Work work in Model)
             {
                 <tr>
-                    <td><img style="width:100px;height:100px;" src="~/Uploads/Works/@work.Photo" alt="Alternate Text" /></td>
+                    <td><img class="imageView" style="width:100px;height:100px;" src="~/Uploads/Works/@work.Photo" alt="Alternate Text" /></td>
                     <td>
                         <a class="mr-2 btn btn-warning" href="@Url.Action("Edit","Work",new {workId = work.Id })">Düzəliş et</a>
                         <a class="delete-button btn btn-danger" data-url="/Admin/Work/Delete/" data-id="@work.Id" data-refresh="/Admin/Work/Index" href="@Url.Action("Delete","Work",new {workId = work.Id })">Sil</a>
