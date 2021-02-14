@@ -14,5 +14,6 @@ namespace TravelApp.Models
         public About About { get; set; }
         public int  AboutId { get; set; }
         public string Text { get; set; }
+
     }
 }
