@@ -8,7 +8,7 @@ namespace TravelApp.Models
     public class AboutLanguage
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        //public string Title { get; set; }
         public Language Language { get; set; }
         public int  LanguageId { get; set; }
         public About About { get; set; }

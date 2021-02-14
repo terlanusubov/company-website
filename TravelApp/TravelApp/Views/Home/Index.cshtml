@@ -20,7 +20,7 @@
                                 incididunt ut labore.
                             </p>
                         </div>
-                        <a href="#">learn more</a>
+                        <a asp-controller="About" asp-action="Index" >@Localizer["Learn More"]</a>
                     </div>
                 </div>
             </div>
@@ -32,8 +32,8 @@
 <div class="our-service-area pt-120 pb-90">
     <div class="container">
         <div class="section-title mb-60 text-center" style="background-image:url(assets/img/logo/section.png)">
-            <h4>We Provide</h4>
-            <h2>Our Services</h2>
+            <h4>@Localizer["Our Services"]</h4>
+            <h2>@Localizer["Our Services"]</h2>
         </div>
         <div class="row">
             @foreach (ServiceLanguage service in Model.serviceLanguages)
@@ -80,7 +80,7 @@
                                 <textarea id="message" placeholder="message" rows="10" cols="30"
                                           name="Message"></textarea>
                             </div>
-                            <button type="submit">send message</button>
+                            <button type="submit">@Localizer["Send Message"]</button>
                         </form>
                     </div>
                 </div>
@@ -88,11 +88,7 @@
             <div class="col-md-6 col-sm-12">
                 <div class="contact-left-wrapper">
                     <div class="contact-text">
-                        <h2>Book an Free <br> Appointment</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, cons adipis elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna
-                        </p>
+                        <h2>@Localizer["Send a Message"]</h2>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
@@ -101,7 +97,7 @@
                                     <i class="zmdi zmdi-pin"></i>
                                 </div>
                                 <div class="contact-icon-text">
-                                    <h3>Location</h3>
+                                    <h3>@Localizer["Location"]</h3>
                                     <p>2020 Willshire Glen,</p>
                                     <p>Alpharetta, GA-30009</p>
                                 </div>
@@ -113,7 +109,7 @@
                                     <i class="zmdi zmdi-time-interval"></i>
                                 </div>
                                 <div class="contact-icon-text">
-                                    <h3>Showroom Hours</h3>
+                                    <h3>@Localizer["Hours"]</h3>
                                     <p>Monday - Friday: 8 a.m. – 4 p.m</p>
                                     <p>Saturday: 10 a.m. – 4 p.m</p>
                                 </div>
@@ -130,8 +126,8 @@
 <div class="testimonial-1-area pt-120 pb-200 gray-bg">
     <div class="container">
         <div class="section-title text-center" style="background-image:url(assets/img/logo/section.png)">
-            <h4>Testimonial</h4>
-            <h2>What Clients Say</h2>
+            <h4>@Localizer["What Clients Say"]</h4>
+            <h2>@Localizer["What Clients Say"]</h2>
         </div>
     </div>
 </div>

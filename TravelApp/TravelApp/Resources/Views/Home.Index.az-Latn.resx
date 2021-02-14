@@ -117,22 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About us" xml:space="preserve">
-    <value>Haqqımızda</value>
+  <data name="Hours" xml:space="preserve">
+    <value>İş saatları</value>
   </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Əlaqə</value>
+  <data name="Learn More" xml:space="preserve">
+    <value>Daha ətraflı</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Ana səhifə</value>
+  <data name="Location" xml:space="preserve">
+    <value>Adres</value>
   </data>
-  <data name="Leave Us a Message" xml:space="preserve">
-    <value>Bizə ismarıc göndərin</value>
-  </data>
-  <data name="Make Appointment" xml:space="preserve">
-    <value>Görüş təyin et</value>
-  </data>
-  <data name="Services" xml:space="preserve">
+  <data name="Our Services" xml:space="preserve">
     <value>Xidmətlərimiz</value>
+  </data>
+  <data name="Send a Message" xml:space="preserve">
+    <value>Bizə ismarıc göndər</value>
+  </data>
+  <data name="Send Message" xml:space="preserve">
+    <value>Göndər</value>
+  </data>
+  <data name="What Clients Say" xml:space="preserve">
+    <value>Müştəri fikirləri</value>
   </data>
 </root>
