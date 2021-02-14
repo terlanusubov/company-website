@@ -11,7 +11,7 @@ using TravelApp.Models.ViewModels;
 
 namespace TravelApp.Components
 {
-    public class HeaderViewComponent:ViewComponent
+    public class HeaderViewComponent : ViewComponent
     {
         private readonly AppDbContext db;
         public HeaderViewComponent(AppDbContext _db)
@@ -21,12 +21,9 @@ namespace TravelApp.Components
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            int langId = await HttpContext.GetCurrentLanguageIdAsync(db,"lang_id");
+            int langId = await HttpContext.GetCurrentLanguageIdAsync(db, "lang_id");
 
-            SettingLanguage settingLanguage = await db.SettingLanguages
-                                                            .Where(sl => sl.LanguageId == langId)
-                                                            .Include(sl => sl.Setting)
-                                                            .FirstOrDefaultAsync();
+            Setting settingLanguage = await db.Settings .FirstOrDefaultAsync();
 
             List<ServiceLanguage> serviceLanguages = await db.ServiceLanguages
                                                                 .Where(sl => sl.LanguageId == langId)

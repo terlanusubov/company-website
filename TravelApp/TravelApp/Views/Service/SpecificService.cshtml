@@ -1,6 +1,6 @@
 ﻿@model ServiceLanguage
 <!-- breadcrumb-banner-area -->
-<div class="breadcrumb-banner-area ptb-120 bg-opacity" style="background-image: url(assets/img/slider/home-banner.jpg)">
+<div class="breadcrumb-banner-area ptb-120 bg-opacity" style="background-image: url(/assets/img/slider/home-banner.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="project-text">
-                    @Model?.Text
+                   @Html.Raw(Model?.Text)
                 </div>
             </div>
         </div>

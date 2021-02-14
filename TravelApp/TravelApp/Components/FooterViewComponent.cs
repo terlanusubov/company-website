@@ -22,9 +22,7 @@ namespace TravelApp.Components
         {
             int langId =  await HttpContext.GetCurrentLanguageIdAsync(db,"lang_id");
 
-            SettingLanguage settingLanguage = await db.SettingLanguages
-                                                        .Where(sl=>sl.LanguageId == langId)
-                                                        .FirstOrDefaultAsync();
+            Setting settingLanguage = await db.Settings.FirstOrDefaultAsync();
 
             List<ServiceLanguage> serviceLanguages = await db.ServiceLanguages
                                                         .Where(sl => sl.LanguageId == langId)
