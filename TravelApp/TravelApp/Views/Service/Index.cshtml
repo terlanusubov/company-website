@@ -1,15 +1,11 @@
 ﻿@model List<ServiceLanguage>
 <!-- breadcrumb-banner-area -->
-<div class="breadcrumb-banner-area ptb-120 bg-opacity" style="background-image:url(assets/img/bg/6.jpg)">
+<div class="breadcrumb-banner-area ptb-120 bg-opacity" style="background-image:url(assets/img/slider/home-banner.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-text text-center">
-                    <h2>service</h2>
-                    <ul class="breadcrumb-menu">
-                        <li><a href="#">service</a></li>
-                        <li><a href="#">about us</a></li>
-                    </ul>
+                    <h2>@Localizer["Service"]</h2>
                 </div>
             </div>
         </div>
@@ -20,8 +16,8 @@
 <div class="our-service-area pt-120 pb-90">
     <div class="container">
         <div class="section-title mb-60 text-center" style="background-image:url(assets/img/logo/section.png)">
-            <h4>We Provide</h4>
-            <h2>Our Services</h2>
+            <h4>@Localizer["Our Services"]</h4>
+            <h2>@Localizer["Our Services"]</h2>
         </div>
         <div class="row">
             @foreach (ServiceLanguage serviceLanguage in Model)
@@ -37,7 +33,7 @@
                             </div>
                             <h2><a href="service-details.html">@serviceLanguage.Name</a></h2>
                             <p>@serviceLanguage.ShortDesc</p>
-                            <a href="@Url.Action("SpecificService","Service",new { serviceId = serviceLanguage.ServiceId})">read more</a>
+                            <a href="@Url.Action("SpecificService","Service",new { serviceId = serviceLanguage.ServiceId})">@Localizer["Read More"]</a>
                         </div>
                     </div>
                 </div>
