@@ -32,10 +32,11 @@
     <link href="~/Admin/css/sweetalert.css" rel="stylesheet" />
     <!-- Main CSS-->
     <link href="~/Admin/css/theme.css" rel="stylesheet" media="all">
+    @RenderSection("Styles",false)
 
 </head>
 
-<body class="animsition">
+<body>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -245,6 +246,7 @@
 
     <!-- Sweet Alert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    @RenderSection("Scripts",false)
 </body>
 </html>
 <!-- end document-->
