@@ -38,7 +38,9 @@ namespace TravelApp
                 var supportedCultures = new[]
                 {
                        new CultureInfo("en-US"),
-                       new CultureInfo("az-Latn")
+                       new CultureInfo("az-Latn"),
+                       new CultureInfo("ru-RU")
+
                 };
 
                 options.DefaultRequestCulture = new RequestCulture(culture: supportedCultures[0].ToString(), uiCulture: supportedCultures[0].ToString());

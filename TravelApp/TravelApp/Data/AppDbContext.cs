@@ -30,6 +30,7 @@ namespace TravelApp.Data
         public DbSet<Work> Works { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Banner> Banners { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
 
         public async Task SeedAsync(IServiceScope scope)
         {
@@ -46,6 +47,11 @@ namespace TravelApp.Data
                     {
                         Name = "Azerbaijan",
                         Key = "az-Latn"
+                    },
+                    new Language()
+                    {
+                        Name = "Russian",
+                        Key = "ru-RU"
                     }
                 };
 
