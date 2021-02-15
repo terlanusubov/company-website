@@ -154,8 +154,6 @@ namespace TravelApp.Migrations
 
                     b.Property<string>("Text");
 
-                    b.Property<string>("Title");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AboutId");
@@ -385,6 +383,8 @@ namespace TravelApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address");
+
                     b.Property<string>("Clock");
 
                     b.Property<string>("Email");
@@ -394,8 +394,6 @@ namespace TravelApp.Migrations
                     b.Property<string>("Instagram");
 
                     b.Property<string>("Location");
-
-                    b.Property<string>("Logo");
 
                     b.Property<string>("Phone");
 

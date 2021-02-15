@@ -18,9 +18,8 @@
             counter++;
         }
     </select>
-    <form action="@Url.Action("Add","Service")"  method="post" enctype="multipart/form-data">
+    <form action="@Url.Action("Add","Service")" method="post" enctype="multipart/form-data">
         <select hidden multiple name="Photos" id="photos">
-            
         </select>
         @{
             counter = 0;
@@ -41,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label>Təsvir</label>
-                        <textarea class="form-control" name="Texts" value=""></textarea>
+                        <textarea id="editor_@(counter)" class="form-control" name="Texts" value=""></textarea>
                     </div>
                 </div>
             }
@@ -59,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label>Təsvir</label>
-                        <textarea class="form-control" name="Texts" value=""></textarea>
+                        <textarea id="editor_@(counter)" class="form-control" name="Texts" value=""></textarea>
                     </div>
                 </div>
             }
@@ -71,7 +70,6 @@
         </div>
         <div class="image-view">
             <ul class="d-flex">
-            
             </ul>
         </div>
 
@@ -81,3 +79,79 @@
     </form>
 </div>
 
+@section Scripts{
+
+    <script src="~/Admin/ckeditor/ckeditor.js"></script>
+    <script>
+        $(document).ready(function () {
+            var editors = [];
+            var editorCounter = 0;
+            for (var i = 0; i < @counter; i++) {
+                var editor = CKEDITOR.replace('editor_' + editorCounter, {
+                    language:'az',
+                    extraPlugins: 'easyimage,image2',
+                    removePlugins: 'image',
+                    removeDialogTabs: 'link:advanced',
+                    height: 350,
+                    cloudServices_uploadUrl: 'https://33333.cke-cs.com/easyimage/upload/',
+                    // Note: this is a token endpoint to be used for CKEditor 4 samples only. Images uploaded using this token may be deleted automatically at any moment.
+                    // To create your own token URL please visit https://ckeditor.com/ckeditor-cloud-services/.
+                    cloudServices_tokenUrl: 'https://33333.cke-cs.com/token/dev/ijrDsqFix838Gh3wGO3F77FSW94BwcLXprJ4APSp3XQ26xsUHTi0jcb1hoBt',
+                    easyimage_styles: {
+                        gradient1: {
+                            group: 'easyimage-gradients',
+                            attributes: {
+                                'class': 'easyimage-gradient-1'
+                            },
+                            label: 'Blue Gradient',
+                            icon: 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/easyimage/icons/gradient1.png',
+                            iconHiDpi: 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/easyimage/icons/hidpi/gradient1.png'
+                        },
+                        gradient2: {
+                            group: 'easyimage-gradients',
+                            attributes: {
+                                'class': 'easyimage-gradient-2'
+                            },
+                            label: 'Pink Gradient',
+                            icon: 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/easyimage/icons/gradient2.png',
+                            iconHiDpi: 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/easyimage/icons/hidpi/gradient2.png'
+                        },
+                        noGradient: {
+                            group: 'easyimage-gradients',
+                            attributes: {
+                                'class': 'easyimage-no-gradient'
+                            },
+                            label: 'No Gradient',
+                            icon: 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/easyimage/icons/nogradient.png',
+                            iconHiDpi: 'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/easyimage/icons/hidpi/nogradient.png'
+                        }
+                    },
+                    easyimage_toolbar: [
+                        'EasyImageFull',
+                        'EasyImageSide',
+                        'EasyImageGradient1',
+                        'EasyImageGradient2',
+                        'EasyImageNoGradient',
+                        'EasyImageAlt'
+                    ]
+                });
+
+                editors.push(editor);
+                editorCounter++;
+            }
+
+
+            $("form").submit(function () {
+                var editorId = $(`${$(".choose-language").val()} textarea`).attr("id");
+                for (var e of editors) {
+                    if (e.name == editorId) {
+                        $("#" + editorId).val(e.getData());
+                    }
+                }
+
+            })
+
+        })
+
+    </script>
+}

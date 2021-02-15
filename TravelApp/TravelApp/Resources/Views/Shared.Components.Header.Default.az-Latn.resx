@@ -123,6 +123,9 @@
   <data name="Contact" xml:space="preserve">
     <value>Əlaqə</value>
   </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Qalereya</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Ana səhifə</value>
   </data>

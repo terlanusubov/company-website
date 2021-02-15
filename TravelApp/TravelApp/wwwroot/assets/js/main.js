@@ -45,7 +45,7 @@ $('.counter').counterUp({
 
 /* testimonial-active */
 $('.testimonial-active').owlCarousel({
-    loop:true,
+    loop:false,
     nav:false,
 	dots:true,
     responsive:{
@@ -119,7 +119,7 @@ $('.image-link').magnificPopup({
 
 /* brand-active */
 $('.brand-active').owlCarousel({
-    loop:true,
+    loop:false,
     nav:false,
 	autoplay:true,
     responsive:{

@@ -1,0 +1,30 @@
+﻿@model List<Work>
+<!-- breadcrumb-banner-area -->
+<div class="breadcrumb-banner-area ptb-120 bg-opacity" style="background-image:url(assets/img/slider/home-banner.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text text-center">
+                    <h2>@Localizer["Gallery"]</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-banner-area-end -->
+<div class="portfolio-area pt-120 pb-110">
+    <div class="container">
+        <div class="grid">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-6 grid-item cat1 pl-5 pr-5">
+                    <div class="work-wrapper mb-10">
+                        <div class="work-img">
+                            <a class="image-link" href="~/Uploads/Works/@item.Photo"><img alt="" src="~/Uploads/Works/@item.Photo"></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

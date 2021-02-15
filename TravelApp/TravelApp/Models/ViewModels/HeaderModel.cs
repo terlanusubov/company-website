@@ -7,7 +7,7 @@ namespace TravelApp.Models.ViewModels
 {
     public class HeaderModel
     {
-        public SettingLanguage SettingLanguage { get; set; }
+        public Setting SettingLanguage { get; set; }
         public List<ServiceLanguage> ServiceLanguages { get; set; }
     }
 }

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Close" xml:space="preserve">
+    <value>Bağla</value>
+  </data>
   <data name="Hours" xml:space="preserve">
     <value>İş saatları</value>
   </data>
@@ -135,7 +138,16 @@
   <data name="Send Message" xml:space="preserve">
     <value>Göndər</value>
   </data>
+  <data name="Success" xml:space="preserve">
+    <value>Uğurlu əməliyyat</value>
+  </data>
   <data name="What Clients Say" xml:space="preserve">
     <value>Müştəri fikirləri</value>
+  </data>
+  <data name="You subscribed successfully" xml:space="preserve">
+    <value>Uğurla abunə oldunuz</value>
+  </data>
+  <data name="Your message sended successfully.Thanks!" xml:space="preserve">
+    <value>Mesajınız uğurla göndərildi</value>
   </data>
 </root>

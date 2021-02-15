@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿ $(document).ready(function () {
     $(".delete-button").click(function (e) {
         e.preventDefault();
         e.stopImmediatePropagation();

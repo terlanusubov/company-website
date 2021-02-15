@@ -9,7 +9,7 @@
                         <a href="index.html"><img src="~/Uploads/" alt="" /></a>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-6 col-sm-9 hidden-xs">
+                <div class="col-lg-7 col-md-6 col-sm-9 hidden-xs">
                     <div class="header-left">
                         <div class="header-text">
                             <div class="header-icon">
@@ -17,24 +17,24 @@
                                 <i class="paint-roller"></i>
                             </div>
                             <div class="header-info">
-                                <span class="phone">@Model.SettingLanguage?.Setting?.Phone</span>
-                                <span class="gmail">@Model.SettingLanguage?.Setting?.Email</span>
+                                <span class="phone">@Model.SettingLanguage?.Phone</span>
+                                <span class="gmail">@Model.SettingLanguage?.Email</span>
                             </div>
                         </div>
-                        <div class="header-text">
+                        <div style="width:300px;" class="header-text">
                             <div class="header-icon">
                                 <i class="fa fa-home"></i>
                             </div>
                             <div class="header-info">
-                                <span class="gmail">@Model.SettingLanguage?.Adress</span>
+                                <span class="gmail">@Model.SettingLanguage?.Location</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-3 hidden-sm col-xs-12">
+                <div class="col-lg-2 col-md-3 hidden-sm col-xs-12">
                     <div class="header-left-icon">
-                        <a href="@Model.SettingLanguage?.Setting?.Facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="@Model.SettingLanguage?.Setting?.Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="@Model.SettingLanguage?.Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="@Model.SettingLanguage?.Instagram"><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -61,6 +61,7 @@
                                         }
                                     </ul>
                                 </li>
+                                <li><a href="@Url.Action("Index","Gallery")">@Localizer["Gallery"]</a></li>
                                 <li><a href="@Url.Action("Index","Contact")">@Localizer["Contact"]</a></li>
                                 <li>
                                     <vc:language></vc:language>
@@ -72,7 +73,7 @@
                 <div class=" col-lg-2 col-md-4 col-xs-12">
                     <div class="make-appointment">
                         <img src="~/assets/img/logo/2.png" alt="" />
-                        <a href="#">@Localizer["Make Appointment"]</a>
+                        <a href="@(ViewBag.Home=="true"?"#":"/home/index#scroll")">@Localizer["Make Appointment"]</a>
                     </div>
                 </div>
                 <div class="col-xs-12">
